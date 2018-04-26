@@ -1,13 +1,9 @@
-# Database for online experiments
-This repository give you all the files and documentation you need to set a database for your online experiment with your own website.
+# Automatic non-breakable spaces
+Html is primarily made for english language. For other languages, such as french, there are different rules for punctuation, spaces and things like that. For instance, there's a space before the question or interrogation marks, which there's not in english! That space should be non-breakable to avoid having a solitary exclamation/question mark on the next line.
 
-## Prerequisite
-1. Some time.
-2. A server on which you'll upload the files.
-3. **No need to be a developer.**
+Here's a javascript file that will deal with the non-breakable spaces if you write in french.
 
-## Content
-* [database.md]() $\rightarrow$ Create the database
-* [GUI]() $\rightarrow$ Attach an identifier to your participants.
-* [addToDatabase.md]() $\rightarrow$ Automatically add the participants to the database.
-* [appendParticipants.md]() $\rightarrow$ Append the details of each website visited for all of your participants ()
+## Step-by-step
+1. Put "nbsp.js" somewhere in your website folder.
+2. In each html page, add a line to refer to it (better by the end of the document):
+`<script type="text/javascript" src="js/nbsp.js"></script>`
