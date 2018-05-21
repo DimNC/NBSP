@@ -1,5 +1,10 @@
-/*  This JS will put non-breaking spaces after or before any caracter you want.
-    In french, we have nbsp before '!' or '?'.
+/*  How to automatically set html paragraphs for french punctuation?
+
+French punctuation is complexe. For example, there are non breaking spaces before exclamation or interrogation marks. To avoid having those marks alone on the next line, "&nbsp;" has to be there, but it's annoying. Here's a .js to automatically do that for you without messing with your html.
+
+→ Just add the "french" class to all your paragraphs written in french.
+
+Adding: non-breaking spaces, em-spaces, fine-spaces in the right places and french guillemets.
 */
 
 myfilter = function(node){
@@ -21,8 +26,10 @@ while (walker.nextNode()) {
   walker.currentNode.nodeValue = walker.currentNode.nodeValue.replace(/([)])/gu, '\u2009$1');
   // // En-spaces around en dashes
   walker.currentNode.nodeValue = walker.currentNode.nodeValue.replace(/\s([–])\s/gu, '\u2002$1\u2002');
+  // // French guillemets with thin spaces
+  walker.currentNode.nodeValue = walker.currentNode.nodeValue.replace(/\s(["])/gu, '\u00AB\u2009');
+  walker.currentNode.nodeValue = walker.currentNode.nodeValue.replace(/(["])\s/gu, '\u2009\u00BB');
 }
-
 
 
 // CELUI LA FONCTIONNE SANS SELECTION DE NOM DE CLASSES
